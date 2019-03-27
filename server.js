@@ -85,7 +85,7 @@ app.get("/articles/:id", function (req, res) {
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", function(req, res) {
     // Create a new note and pass the req.body to the entry
-    db.Note.create(req.body)
+    db.Comment.create(req.body)
       .then(function(dbComment) {
         // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
         // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
